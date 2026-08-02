@@ -51,7 +51,7 @@ result = exact_solver.solve(problem)
 print("最適解 (x0, x1):", result.x)       # 出力: [0. 1.]
 print("その時の最小値:", result.fval)    # 出力: -2.0
 
-#%%
+#%% これはどういうことでしょうか　ああそうですか。
 # qp = QuadraticProgram("pairwise-onehot")
 # for i in range(4):
 #     qp.binary_var(f"q{i}")
