@@ -35,17 +35,7 @@ problem.minimize(linear=linear_terms, quadratic=quadratic_terms)
 
 print(problem.prettyprint())
 
-#%%
-# qp = QuadraticProgram("pairwise-onehot")
-# for i in range(4):
-#     qp.binary_var(f"q{i}")
 
-# qp.minimize(
-#     linear=[4, 4, 4, 4],
-#     quadratic={(0,1):4, (0,2):4, (1,2):8, (1,3):2, (2,3):2}
-# )
-
-# cost_op, offset = qp.to_ising()
 
 #%%
 from qiskit_optimization.algorithms import MinimumEigenOptimizer
@@ -60,3 +50,15 @@ result = exact_solver.solve(problem)
 # 結果の取り出し
 print("最適解 (x0, x1):", result.x)       # 出力: [0. 1.]
 print("その時の最小値:", result.fval)    # 出力: -2.0
+
+#%%
+# qp = QuadraticProgram("pairwise-onehot")
+# for i in range(4):
+#     qp.binary_var(f"q{i}")
+
+# qp.minimize(
+#     linear=[4, 4, 4, 4],
+#     quadratic={(0,1):4, (0,2):4, (1,2):8, (1,3):2, (2,3):2}
+# )
+
+# cost_op, offset = qp.to_ising()
